@@ -1,3 +1,5 @@
+import undoable  from "redux-undo"
+
 let initState = [];
 
 const todos = (state = initState, action) => {
@@ -18,4 +20,4 @@ const todos = (state = initState, action) => {
     }
 }
 
-export default todos;
+export default undoable(todos);
