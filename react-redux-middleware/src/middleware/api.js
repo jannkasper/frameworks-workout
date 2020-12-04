@@ -13,7 +13,7 @@ const getNextPageUrl = response => {
         return null
     }
 
-    return nextLink.trim().splice(";")[0].slice(1,-1);
+    return nextLink.trim().split(";")[0].slice(1,-1);
 }
 
 const API_ROOT = 'https://api.github.com/';

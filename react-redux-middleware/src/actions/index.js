@@ -53,9 +53,12 @@ export const STARRED_FAILURE = "STARRED_FAILURE";
 // Fetches a page of starred repos by a particular user.
 // Relies on the custom API middleware defined in ../middleware/api.js.
 const fetchStarred = (login, nextPageUrl) => ({
-    types: [ STARRED_REQUEST, STARRED_SUCCESS, STARRED_FAILURE ],
-    endpoint: nextPageUrl,
-    schema: Schemas.REPO_ARRAY
+    login,
+    [CALL_API]: {
+        types: [ STARRED_REQUEST, STARRED_SUCCESS, STARRED_FAILURE ],
+        endpoint: nextPageUrl,
+        schema: Schemas.REPO_ARRAY
+    }
 })
 
 // Fetches a page of starred repos by a particular user.
