@@ -1,98 +1,116 @@
 import React from "react"
+import fetchTweetAst from '../lib/fetchTweetAst';
+import components from "../components/layout/components"
+import Page from '../components/landing/page';
+import A from '../components/landing/anchor';
+import { Score, Gauge } from "../components/landing/lighthouse-score";
+
+const P = components.p;
+const Hr = components.hr;
+const Code = components.code;
+const Ul = components.ul;
+const Li = components.li;
+const H2 = components.h2;
 
 export async function getStaticProps() {
+    const tweet = await fetchTweetAst('1249937011068129280');
 
-    return { props: {} }
+    return { props: { tweet } };
 }
 
 export default function Index({ tweet }) {
     return (
-        <page
+        <Page
             title="Static Tweet Next.js Demo"
             description="A demo showing off ahead-of-time and incremental static generation by using Tweets as the datasource"
         >
-            <p>
+            <P>
                 This demo shows off the next-gen Static Site Generation capabilities in Next.js. The
                 following tweet:
-            </p>
+            </P>
             {/*TODO Tweet*/}
-            <p>
-                was inlined into the HTML of this page (<code className="inline">`pages/index.js`</code>) by
-                using <code className="inline">`getStaticProps`</code> in your Next.js page (
-                <a href="https://github.com/lfades/static-tweet/blob/master/pages/index.js">source</a>
+            <P>
+                was inlined into the HTML of this page (<Code className="inline">`pages/index.js`</Code>) by
+                using <Code className="inline">`getStaticProps`</Code> in your Next.js page (
+                <A href="https://github.com/lfades/static-tweet/blob/master/pages/index.js">source</A>
                 ).
-            </p>
-            <p>
-                That means no Twitter embed <code className="inline">`{`<iframe>`}`</code>, no JS, no layout
+            </P>
+            <P>
+                That means no Twitter embed <Code className="inline">`{`<iframe>`}`</Code>, no JS, no layout
                 and scrolling jumps, no slowness, great SEO, great lighthouse scores:
-            </p>
-            {/*TODO Score*/}
-            <p>To see this in action, try statically rendering your very own tweet it:</p>
+            </P>
+            <Score>
+                <Gauge score={98} text="Performance" />
+                <Gauge score={93} text="Accessibility" />
+                <Gauge score={100} text="Best Practices" />
+                <Gauge score={100} text="SEO" />
+            </Score>
+            <P>To see this in action, try statically rendering your very own tweet it:</P>
             {/*TODO RandomTweet*/}
-            <p>
+            <P>
                 How is this possible? The deploy time for this project was <strong>30 seconds</strong>. We
                 couldn’t have possibly statically generated all tweets. Each day,{' '}
-                <a href="https://blog.twitter.com/engineering/en_us/a/2013/new-tweets-per-second-record-and-how.html">
+                <A href="https://blog.twitter.com/engineering/en_us/a/2013/new-tweets-per-second-record-and-how.html">
                     500M tweets are added
-                </a>
+                </A>
                 !
-            </p>
-            <h2 data={{ id: 'incremental-static-generation' }}>Incremental Static Generation</h2>
-            <p>
+            </P>
+            <H2 data={{ id: 'incremental-static-generation' }}>Incremental Static Generation</H2>
+            <P>
                 When you visit{' '}
-                <code className="inline">
+                <Code className="inline">
                     `https://static-tweet.now.sh/<b>{`{tweetId}`}</b>`
-                </code>{' '}
+                </Code>{' '}
                 you’ll notice that if the tweet has never been rendered before, you’ll get a{' '}
                 <strong>skeleton page</strong>.
-            </p>
+            </P>
             {/*TODO Tweet*/}
-            <p>
+            <P>
                 After you refresh that page, you’ll get the static HTML, no matter what edge in the{' '}
-                <a href="https://vercel.com/edge-network">global network</a> you are visiting.
-            </p>
-            <p>
+                <A href="https://vercel.com/edge-network">global network</A> you are visiting.
+            </P>
+            <P>
                 Because it’s static HTML, if Twitter disappears from the internet, you have strong
                 guarantees of its high availability, backed by redundant storage.
-            </p>
-            <p>
-                This is all enabled by a simple option: <code className="inline">`fallback: true`</code> in{' '}
-                <code className="inline">`getStaticPaths`</code>. In this case, this is defined in the
-                Next.js page called <code className="inline">`pages/[tweet].js`</code> (
-                <a href="https://github.com/lfades/static-tweet/blob/master/pages/%5Btweet%5D.js">source</a>
+            </P>
+            <P>
+                This is all enabled by a simple option: <Code className="inline">`fallback: true`</Code> in{' '}
+                <Code className="inline">`getStaticPaths`</Code>. In this case, this is defined in the
+                Next.js page called <Code className="inline">`pages/[tweet].js`</Code> (
+                <A href="https://github.com/lfades/static-tweet/blob/master/pages/%5Btweet%5D.js">source</A>
                 ).
-            </p>
-            <p>
-                The <code className="inline">`getStaticPaths`</code> hook allows you to give Next.js the set
+            </P>
+            <P>
+                The <Code className="inline">`getStaticPaths`</Code> hook allows you to give Next.js the set
                 of IDs you want to generate at <strong>build time</strong>.
-            </p>
-            <p>
+            </P>
+            <P>
                 When you define a fallback, you get the power to continue lazily building pages{' '}
                 <strong>at runtime as well</strong>. Unlike traditional Server Side Rendering (SSR), the
                 initial request is always <strong>instant</strong> (the fallback itself is also static), you
                 don’t worry about <strong>configuring caching</strong> and the work is only done{' '}
                 <strong>once globally</strong>.
-            </p>
-            <hr />
-            <ul>
-                <li>
-                    <a href="https://github.com/jannkasper/frameworks-workout/tree/master/next-static-tweet">
-                        Source code
-                    </a>{' '}
+            </P>
+            <Hr />
+            <Ul>
+                <Li>
+                    <A href="https://github.com/jannkasper/frameworks-workout/tree/master/next-static-tweet">
+                        Source Code
+                    </A>{' '}
                     for this page
-                </li>
-                <li>
-                    <a href="https://nextjs.org/docs/basic-features/data-fetching">Next.js documentation</a>{' '}
-                    for <code className="inline">`getStaticProps`</code> and{' '}
-                    <code className="inline">`getStaticPaths`</code>
-                </li>
-                <li>
+                </Li>
+                <Li>
+                    <A href="https://nextjs.org/docs/basic-features/data-fetching">Next.js documentation</A>{' '}
+                    for <Code className="inline">`getStaticProps`</Code> and{' '}
+                    <Code className="inline">`getStaticPaths`</Code>
+                </Li>
+                <Li>
                     Get started{' '}
-                    <a href="https://nextjs.org/learn/basics/create-nextjs-app">
+                    <A href="https://nextjs.org/learn/basics/create-nextjs-app">
                         learning Next.js from scratch
-                    </a>
-                </li>
-            </ul>
-        </page>
+                    </A>
+                </Li>
+            </Ul>
+        </Page>
     )
 }

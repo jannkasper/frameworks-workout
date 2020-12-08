@@ -34,6 +34,7 @@
     "rehype-sanitize": "^3.0.0",
     "remark-parse": "^7.0.2",
     "remark-rehype": "^5.0.0",
+    "styled-jsx": "^3.3.2",
     "unified": "^8.4.2",
     "unist-util-visit": "^2.0.2"
   },
