@@ -33,7 +33,7 @@ function TemperatureInput(props) {
     return (
         <div>
             <p>Enter temperature in {scaleNames[props.scale]}: </p>
-            <input value={props.temperature} onChange={handleChange}/>
+            <input ref={props.textInput} value={props.temperature} onChange={handleChange}/>
             <button onClick={() => dispatch({type: 'decrement'})}>-</button>
             <button onClick={() => dispatch({type: 'increment'})}>+</button>
         </div>
