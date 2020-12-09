@@ -2,6 +2,7 @@ import React from "react"
 import fetchTweetAst from '../lib/fetchTweetAst';
 import components from "../components/layout/components"
 import Page from '../components/landing/page';
+import Tweet from '../components/landing/tweet';
 import A from '../components/landing/anchor';
 import { Score, Gauge } from "../components/landing/lighthouse-score";
 
@@ -28,7 +29,7 @@ export default function Index({ tweet }) {
                 This demo shows off the next-gen Static Site Generation capabilities in Next.js. The
                 following tweet:
             </P>
-            {/*TODO Tweet*/}
+            <Tweet ast={tweet} />
             <P>
                 was inlined into the HTML of this page (<Code className="inline">`pages/index.js`</Code>) by
                 using <Code className="inline">`getStaticProps`</Code> in your Next.js page (
