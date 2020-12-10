@@ -3,6 +3,7 @@ import fetchTweetAst from '../lib/fetchTweetAst';
 import components from "../components/layout/components"
 import Page from '../components/landing/page';
 import Tweet from '../components/landing/tweet';
+import RandomTweet from '../components/landing/random-tweet';
 import A from '../components/landing/anchor';
 import { Score, Gauge } from "../components/landing/lighthouse-score";
 
@@ -47,7 +48,7 @@ export default function Index({ tweet }) {
                 <Gauge score={100} text="SEO" />
             </Score>
             <P>To see this in action, try statically rendering your very own tweet it:</P>
-            {/*TODO RandomTweet*/}
+            <RandomTweet initialId="1253411282608205826" />
             <P>
                 How is this possible? The deploy time for this project was <strong>30 seconds</strong>. We
                 couldn’t have possibly statically generated all tweets. Each day,{' '}
@@ -65,7 +66,7 @@ export default function Index({ tweet }) {
                 you’ll notice that if the tweet has never been rendered before, you’ll get a{' '}
                 <strong>skeleton page</strong>.
             </P>
-            {/*TODO Tweet*/}
+            <Tweet skeleton />
             <P>
                 After you refresh that page, you’ll get the static HTML, no matter what edge in the{' '}
                 <A href="https://vercel.com/edge-network">global network</A> you are visiting.
