@@ -8,7 +8,13 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Button />
+        <Button type="fill"/>
+        <Button type="pulse"/>
+        <Button type="close"/>
+        <Button type="raise"/>
+        <Button type="up"/>
+        <Button type="slide"/>
+        <Button type="offset"/>
       </header>
     </div>
   );

@@ -1,13 +1,8 @@
 import React from "react";
-import styles from "./button.module.css";
+import styles from "./button.module.scss";
 
-const Button = React.forwardRef(({}, ref) => (
-    <button
-        ref={ref}
-        className={styles.button}
-    >
-        CLICK
-    </button>
+const Button = React.forwardRef(({type}, ref) => (
+    <button className={styles[type]}>{type.toUpperCase()}</button>
 ))
 
 export default Button;
