@@ -15,6 +15,17 @@ function App() {
         <Button type="up"/>
         <Button type="slide"/>
         <Button type="offset"/>
+        <br/>
+        <Button type="bop"/>
+        <Button type="flick"/>
+        <Button type="twist"/>
+        <Button type="spin"/>
+        <br/>
+        <Button type="rainbow"/>
+        <br/>
+        <Button type="atom"/>
+        <br/>
+        <Button type="prism"/>
       </header>
     </div>
   );

@@ -5,7 +5,14 @@ $colors: (
         raise: #ffa260,
         up: #e4cb58,
         slide: #8fc866,
-        offset: #19bc8b
+        offset: #19bc8b,
+
+        bop: #a972cb,
+        flick: #ef6eae,
+        twist: #ff7f82,
+        spin: #ffa260,
+
+        atom: #78FFCD
 );
 
 @each $type, $color in $colors {
@@ -78,7 +85,196 @@ button {
   background: none;
   border: 2px solid;
   font: inherit;
+  text-transform: uppercase;
   line-height: 1;
   margin: 0.5em;
   padding: 1em 2em;
 }
+
+// ---------- BOP / FLICK / TWIST / SPIN ---------
+
+.bop:hover,
+.bop:focus {
+  transform: translateY(3px);
+}
+
+.flick:hover,
+.flick:focus {
+  animation: flick 640ms infinite;
+}
+
+@keyframes flick {
+  0% {transform: translate(0,0) rotate(0deg) scale(1)}
+  67% {transform: translate(.4rem, -1.8rem) rotate(160deg) scale(.4)}
+  100% {transform: translate(0,0) rotate(0deg) scale(1)}
+}
+
+.twist:hover,
+.twist:focus {
+  animation: twist 800ms infinite;
+}
+
+@keyframes twist {
+  0% {transform: rotate(0deg)}
+  30% {transform: rotate(60deg)}
+  60% {transform: rotate(-20deg)}
+  100% {transform: rotate(0deg)}
+}
+
+.spin:hover,
+.spin:focus {
+  animation: spin 800ms infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+// ---------- ATOM ---------
+:root {
+  --primary: #78FFCD;
+  --solid: #fff;
+  --btn-w: 6em;
+  --btn-h: 3em;
+  --dot-w: calc(var(--btn-w)*.2);
+  --tr-X: calc(var(--btn-w) - var(--btn-h));
+}
+
+.atom {
+  position: relative;
+  margin: 0 auto;
+  width: var(--btn-w);
+  color: var(--color);
+  border: .15em solid var(--color);
+  border-radius: 5em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: var(--btn-h);
+  cursor: pointer;
+}
+
+.dot {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: var(--btn-h);
+  height: 100%;
+  border-radius: 100%;
+  transition: all 300ms ease;
+  display: none;
+  //background: #0cce6b;
+}
+.dot:after {
+  content: '';
+  position: absolute;
+  left: calc(50% - .4em);
+  top: -.4em;
+  height: .8em;
+  width: .8em;
+  background: var(--primary);
+  border-radius: 1em;
+  border: .15em solid var(--solid);
+  box-shadow: 0 0 .7em var(--solid),
+              0 0 2em var(--primary);
+}
+.atom:hover .dot,
+.atom:focus .dot {
+  animation: atom 2s infinite linear;
+  display: block;
+}
+@keyframes atom {
+  0% {transform: translateX(0) rotate(0);}
+  30%{transform: translateX(var(--tr-X)) rotate(0);}
+  50% {transform: translateX(var(--tr-X)) rotate(180deg);}
+  80% {transform: translateX(0) rotate(180deg);}
+  100% {transform: translateX(0) rotate(360deg);}
+}
+
+// ---------- RAINBOW ---------
+
+.rainbow {
+  align-items:center;
+  justify-content:center;
+  border: none;
+  position: relative;
+  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+}
+
+.rainbow:after {
+  content:attr(alt);
+  color: white;
+  line-height: 40px;
+  position: absolute;
+  background-color: hsl(227, 10%, 10%);
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+
+.rainbow:hover {
+  animation:slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
+
+// ---------- PRISM ---------
+
+.prism{
+  width:100px;
+  height:40px;
+  cursor:pointer;
+  perspective:500px;
+  -webkit-perspective:500px;
+  margin: 0 auto;
+}
+.prism div{
+  height:100%;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  transition: 0.25s;
+  -webkit-transition:0.25s;
+}
+.prism:hover div{
+  transform:rotateX(-90deg);
+}
+.prism button{
+  width:100%;
+  height:100%;
+  position:absolute;
+  box-sizing:border-box;
+  text-align:center;
+
+  margin: 0em;
+  padding: 0em;
+}
+.prism button:nth-child(1){
+  color:#fff;
+  transform: translate3d(0, 0, 20px);
+  -webkit-transform: translate3d(0, 0, 20px);
+}
+.prism button:nth-child(2){
+  color: black;
+  background:#fff;
+  transform: rotateX(90deg) translate3d(0, 0, 20px);
+  -webkit-transform: rotateX(90deg) translate3d(0, 0, 20px);
+}
+
+
+
+
+
+
+
+
+
