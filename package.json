@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "postinstall": "cd react-components && npm install",
+    "start": "cd react-components && npm start",
     "build": "cd react-components && npm build"
   }
 }
