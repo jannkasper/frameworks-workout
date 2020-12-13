@@ -1,6 +1,7 @@
 import './App.css';
 import {Button} from "./components";
 import Input from "./components/button/input";
+import InputAnimation from "./components/button/InputAnimation";
 
 function App() {
 
@@ -32,8 +33,8 @@ function App() {
         <Input type="minimal" />
         <br />
         <Input type="form" />
-          <br />
-          <Input type="animation" />
+        <br />
+        <InputAnimation />
       </div>
   )
 

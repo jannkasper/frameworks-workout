@@ -262,11 +262,13 @@ button {
   padding: 0em;
 }
 .prism button:nth-child(1){
+  left: 0px;
   color:#fff;
   transform: translate3d(0, 0, 20px);
   -webkit-transform: translate3d(0, 0, 20px);
 }
 .prism button:nth-child(2){
+  left: 0px;
   color: black;
   background:#fff;
   transform: rotateX(90deg) translate3d(0, 0, 20px);

@@ -1,5 +1,12 @@
 // ---------- RESET BUTTON STYLING ---------
-input {
+.minimal input {
+  background: none;
+  border: none;
+  border-radius: 0;
+  appearance: none;
+  outline: none;
+}
+.form input {
   background: none;
   border: none;
   border-radius: 0;
