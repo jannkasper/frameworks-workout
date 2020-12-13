@@ -1,7 +1,6 @@
 import './App.css';
 import {Button} from "./components";
-import Input from "./components/button/input";
-import InputAnimation from "./components/button/InputAnimation";
+import {Input, InputAnimation} from "./components/input";
 
 function App() {
 
