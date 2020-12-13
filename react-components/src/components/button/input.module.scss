@@ -1,0 +1,132 @@
+// ---------- RESET BUTTON STYLING ---------
+input {
+  background: none;
+  border: none;
+  border-radius: 0;
+  appearance: none;
+  outline: none;
+}
+
+// ---------- MINIMAL ---------
+.minimal {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.minimal input {
+  width: 100%;
+  line-height: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+
+.minimal label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 30px;
+  color: #ccc;
+  cursor: text;
+  transition: all 200ms ease-out;
+  z-index: 10;
+}
+
+.minimal input:focus,
+.minimal input:valid {
+  color: #ccc;
+  &~label {
+    color: #2962ff;
+    transform: translateY(-20px);
+    font-size: 0.825em;
+  }
+}
+
+.minimal .underline {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  bottom: -1px;
+  height: 2px;
+  background: #2962ff;
+  transition: all 200ms ease-out;
+}
+
+.minimal input:focus,
+.minimal input:valid {
+  &~.underline {
+    width: 100%;
+  }
+}
+
+// ---------- FORM ---------
+:root {
+  --input-color: #99A3BA;
+  --input-border: #CDD9ED;
+  --input-background: #fff;
+  --input-placeholder: #CBD1DC;
+
+  --input-border-focus: #275EFE;
+
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #EEF4FF;
+
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #678EFE;
+}
+* {
+  box-sizing: inherit;
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+.form {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.form > .formField {
+  display: block;
+  width: 100%;
+  line-height: 25px;
+  padding: 8px;
+  border: 1px solid var(--input-border) ;
+  background: var(--input-background);
+}
+
+.form > .formField:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+}
+
+.form > span {
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--group-color);
+  background: var(--group-background);
+  border: 1px solid var(--group-border);
+  transition: background .3s ease, border .3s ease, color .3s ease;
+}
+
+.form:focus-within > span {
+    color: var(--group-color-focus);
+    background: var(--group-background-focus);
+    border-color: var(--group-border-focus);
+}
+
+
+
+
+
+
+

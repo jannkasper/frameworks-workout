@@ -12,14 +12,12 @@ const Button = React.forwardRef(({type}, ref) => {
             )
         case "prism":
             return (
-                <div className={styles.body}>
                 <figure className={styles.prism}>
                     <div>
                         <button>Hover</button>
                         <button>{type}</button>
                     </div>
                 </figure>
-                </div>
             )
         default:
             return <button alt={type} className={styles[type]}>{type}</button>

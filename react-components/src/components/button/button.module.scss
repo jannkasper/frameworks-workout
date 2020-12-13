@@ -22,6 +22,29 @@ $colors: (
   }
 }
 
+button {
+  color: var(--color);
+  transition: 0.25s;
+
+  &:hover,
+  &:focus {
+    border-color: var(--color);
+    color: #fff;
+  }
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+// ---------- FILL / PULSE / CLOSE / RAISE / UP / SLIDE / OFFSET ---------
+
 .fill:hover,
 .fill:focus {
   box-shadow: inset 0 0 0 2em var(--hover);
@@ -67,28 +90,6 @@ $colors: (
     box-shadow: 0 0 0 0  var(--hover),
                 inset 6em 3.5em 0 0 var(--hover)
   }
-
-}
-
-button {
-  color: var(--color);
-  transition: 0.25s;
-
-  &:hover,
-  &:focus {
-    border-color: var(--color);
-    color: #fff;
-  }
-}
-
-button {
-  background: none;
-  border: 2px solid;
-  font: inherit;
-  text-transform: uppercase;
-  line-height: 1;
-  margin: 0.5em;
-  padding: 1em 2em;
 }
 
 // ---------- BOP / FLICK / TWIST / SPIN ---------
@@ -135,7 +136,6 @@ button {
   }
 }
 
-
 // ---------- ATOM ---------
 :root {
   --primary: #78FFCD;
@@ -170,6 +170,7 @@ button {
   display: none;
   //background: #0cce6b;
 }
+
 .dot:after {
   content: '';
   position: absolute;
@@ -183,11 +184,13 @@ button {
   box-shadow: 0 0 .7em var(--solid),
               0 0 2em var(--primary);
 }
+
 .atom:hover .dot,
 .atom:focus .dot {
   animation: atom 2s infinite linear;
   display: block;
 }
+
 @keyframes atom {
   0% {transform: translateX(0) rotate(0);}
   30%{transform: translateX(var(--tr-X)) rotate(0);}
@@ -203,7 +206,7 @@ button {
   justify-content:center;
   border: none;
   position: relative;
-  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+  background-image: linear-gradient(30deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
 }
 
 .rainbow:after {

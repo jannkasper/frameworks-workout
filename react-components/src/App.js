@@ -1,13 +1,11 @@
 import './App.css';
 import {Button} from "./components";
+import Input from "./components/button/input";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+
+  const buttons = (
+      <div>
         <Button type="fill"/>
         <Button type="pulse"/>
         <Button type="close"/>
@@ -26,6 +24,28 @@ function App() {
         <Button type="atom"/>
         <br/>
         <Button type="prism"/>
+      </div>
+  )
+
+  const inputs = (
+      <div>
+        <Input type="minimal" />
+        <br />
+        <Input type="form" />
+          <br />
+          <Input type="animation" />
+      </div>
+  )
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        {buttons}
+        <br />
+        {inputs}
       </header>
     </div>
   );
