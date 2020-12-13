@@ -1,4 +1,5 @@
 {
+  "root": "./rea",
   "scripts": {
-  "start": "cd react-components && npm install && npm run build"
+  "start": "cd react-components && npm build"
 }}
