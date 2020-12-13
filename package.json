@@ -1,0 +1,4 @@
+{
+  "scripts": {
+  "start": "cd react-components && npm install && npm run build"
+}}
