@@ -37,7 +37,7 @@ function MouseOver() {
     //--------------------------------------------------
 
     let counter = 0;
-    let updateRate = 1;
+    let updateRate = 5;
     let isTimeToUpdate = function() {
         return counter++ % updateRate === 0;
     };
@@ -45,13 +45,13 @@ function MouseOver() {
     //--------------------------------------------------
 
     let onMouseEnterHandler = function(event) {
-        helper.current.className = [styles.helper].join(" ");
+        helper.current.className = "";
         update(event);
     };
 
     let onMouseLeaveHandler = function() {
         inner.current.style = "";
-        helper.current.className = [styles.helper, styles.hidden].join(" ");
+        helper.current.className = styles.hidden;
     };
 
     let onMouseMoveHandler = function(event) {
@@ -87,7 +87,6 @@ function MouseOver() {
         document.documentElement.style.setProperty('--left',"" + (e.clientX-container.current.offsetLeft) + "px");
     };
 
-
     return (
         <div className={styles.page}>
             <div ref={container} className={styles.container}
@@ -96,7 +95,7 @@ function MouseOver() {
                  onMouseLeave={onMouseLeaveHandler}
             >
                 <div ref={inner} className={styles.inner}>
-                    <span ref={helper} className={[styles.helper, styles.hidden].join(" ")}/>
+                    <span ref={helper} id={styles.helper} className={styles.hidden}/>
                 </div>
             </div>
         </div>

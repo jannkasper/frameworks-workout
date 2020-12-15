@@ -32,10 +32,6 @@ function InputAnimation () {
         focus ? styles.focus : null
     ].join(" ");
 
-    console.log("active ", active);
-    console.log("focus ", focus);
-    console.log("value ", value)
-
     return (
         <div className={styleList}>
             <form>

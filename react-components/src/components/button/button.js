@@ -6,7 +6,7 @@ const Button = React.forwardRef(({type}, ref) => {
         case "atom":
             return (
             <div className={styles.atom}>
-                <text>{type}</text>
+                <label>{type}</label>
                 <div className={styles.dot}></div>
             </div>
             )
