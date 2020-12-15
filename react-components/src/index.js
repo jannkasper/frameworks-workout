@@ -6,6 +6,7 @@ import {Route, Switch, BrowserRouter as Router, Link} from "react-router-dom";
 import Login from "./pages/login/login";
 import Cubic from "./pages/cubic/cubic";
 import MouseOver from "./pages/mouseOver/mouseOver";
+import Earbuds from "./pages/shadow/earbuds";
 
 const style = {
     position: "relative",
@@ -25,6 +26,7 @@ ReactDOM.render(
           <Link style={style} to="/login">Login</Link>
           <Link style={style} to="/cubic">Cubic</Link>
           <Link style={style} to="/mouseover">MouseOver</Link>
+          <Link style={style} to="/earbuds">Earbuds</Link>
       </div>
       <Switch>
           <Route path="/login">
@@ -35,6 +37,9 @@ ReactDOM.render(
           </Route>
           <Route path="/mouseover">
               <MouseOver />
+          </Route>
+          <Route path="/earbuds">
+              <Earbuds />
           </Route>
           <Route path="/">
               <App />
