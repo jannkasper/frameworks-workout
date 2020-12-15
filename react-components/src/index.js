@@ -7,6 +7,7 @@ import Login from "./pages/login/login";
 import Cubic from "./pages/cubic/cubic";
 import MouseOver from "./pages/mouseOver/mouseOver";
 import Earbuds from "./pages/earbuds/earbuds";
+import Posts from "./pages/posts/posts";
 
 const style = {
     position: "relative",
@@ -27,6 +28,7 @@ ReactDOM.render(
           <Link style={style} to="/cubic">Cubic</Link>
           <Link style={style} to="/mouseover">MouseOver</Link>
           <Link style={style} to="/earbuds">Earbuds</Link>
+          <Link style={style} to="/posts">Posts</Link>
       </div>
       <Switch>
           <Route path="/login">
@@ -40,6 +42,9 @@ ReactDOM.render(
           </Route>
           <Route path="/earbuds">
               <Earbuds />
+          </Route>
+          <Route path="/posts">
+              <Posts />
           </Route>
           <Route path="/">
               <App />

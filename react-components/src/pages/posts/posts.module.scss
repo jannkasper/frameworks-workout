@@ -1,0 +1,19 @@
+.page {
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(180deg, #ffb253 0%, #f56259 100%);
+}
+
+.sliderWrap {
+  height: 100%;
+  width: 100%;
+}
+
+.slider {
+  position: absolute;
+  //width: 100%;
+  left: calc(50% - 265px);
+  top: calc(50% - 250px);
+}
