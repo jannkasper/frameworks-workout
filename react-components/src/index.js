@@ -6,7 +6,7 @@ import {Route, Switch, BrowserRouter as Router, Link} from "react-router-dom";
 import Login from "./pages/login/login";
 import Cubic from "./pages/cubic/cubic";
 import MouseOver from "./pages/mouseOver/mouseOver";
-import Earbuds from "./pages/shadow/earbuds";
+import Earbuds from "./pages/earbuds/earbuds";
 
 const style = {
     position: "relative",
