@@ -27,7 +27,7 @@ function IMac() {
         }
 
         function handleScroll() {
-            document.getElementById("scrollme").className = styles.fadeOut;
+            document.getElementById("scrollText").className = styles.fadeOut;
 
             let windowTop = window.pageYOffset;
             let scrollPercent = (offsetTop - windowTop) / offsetTop;
@@ -47,7 +47,7 @@ function IMac() {
 
     return (
         <div className={styles.page}>
-            <h1 id="scrollme">scroll me</h1>
+            <h1 id="scrollText" className={styles.scrollText}>scroll me</h1>
             <div id="picture" className={[styles.intro, styles.mac].join(" ")} />
             <div id="mac" className={styles.mac} />
             <div className={styles.content}>
