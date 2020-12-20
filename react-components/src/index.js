@@ -9,6 +9,7 @@ import MouseOver from "./pages/mouseOver/mouseOver";
 import Earbuds from "./pages/earbuds/earbuds";
 import Posts from "./pages/posts/posts";
 import IMac from "./pages/iMac/iMac";
+import Skewed from "./pages/skewed/skewed";
 
 const style = {
     position: "relative",
@@ -31,6 +32,7 @@ ReactDOM.render(
           <Link style={style} to="/earbuds">Earbuds</Link>
           <Link style={style} to="/posts">Posts</Link>
           <Link style={style} to="/imac">iMac</Link>
+          <Link style={style} to="/skewed">Skewed</Link>
 
       </div>
       <Switch>
@@ -51,6 +53,9 @@ ReactDOM.render(
           </Route>
           <Route path="/imac">
               <IMac />
+          </Route>
+          <Route path="/skewed">
+              <Skewed />
           </Route>
           <Route path="/">
               <App />
