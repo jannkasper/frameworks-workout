@@ -10,6 +10,7 @@ import Earbuds from "./pages/earbuds/earbuds";
 import Posts from "./pages/posts/posts";
 import IMac from "./pages/iMac/iMac";
 import Skewed from "./pages/skewed/skewed";
+import DayNight from "./pages/dayNight/dayNight";
 
 const style = {
     position: "relative",
@@ -33,6 +34,7 @@ ReactDOM.render(
           <Link style={style} to="/posts">Posts</Link>
           <Link style={style} to="/imac">iMac</Link>
           <Link style={style} to="/skewed">Skewed</Link>
+          <Link style={style} to="/daynight">DayNight</Link>
 
       </div>
       <Switch>
@@ -56,6 +58,9 @@ ReactDOM.render(
           </Route>
           <Route path="/skewed">
               <Skewed />
+          </Route>
+          <Route path="/daynight">
+              <DayNight />
           </Route>
           <Route path="/">
               <App />
