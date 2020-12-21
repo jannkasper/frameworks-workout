@@ -11,6 +11,7 @@ import Posts from "./pages/posts/posts";
 import IMac from "./pages/iMac/iMac";
 import Skewed from "./pages/skewed/skewed";
 import DayNight from "./pages/dayNight/dayNight";
+import Adidas from "./pages/adidas/adidas";
 
 const style = {
     position: "relative",
@@ -35,6 +36,7 @@ ReactDOM.render(
           <Link style={style} to="/imac">iMac</Link>
           <Link style={style} to="/skewed">Skewed</Link>
           <Link style={style} to="/daynight">DayNight</Link>
+          <Link style={style} to="/adidas">Adidas</Link>
 
       </div>
       <Switch>
@@ -61,6 +63,9 @@ ReactDOM.render(
           </Route>
           <Route path="/daynight">
               <DayNight />
+          </Route>
+          <Route path="/adidas">
+              <Adidas />
           </Route>
           <Route path="/">
               <App />
